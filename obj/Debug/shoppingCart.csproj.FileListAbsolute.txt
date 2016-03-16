@@ -1,0 +1,7 @@
+E:\Drive\Projects\Visual Studio Projects\shoppingCart\shoppingCart\bin\Debug\shoppingCart.exe.config
+E:\Drive\Projects\Visual Studio Projects\shoppingCart\shoppingCart\bin\Debug\shoppingCart.exe
+E:\Drive\Projects\Visual Studio Projects\shoppingCart\shoppingCart\bin\Debug\shoppingCart.pdb
+E:\Drive\Projects\Visual Studio Projects\shoppingCart\shoppingCart\obj\Debug\shoppingCart.csprojResolveAssemblyReference.cache
+E:\Drive\Projects\Visual Studio Projects\shoppingCart\shoppingCart\obj\Debug\shoppingCart.exe
+E:\Drive\Projects\Visual Studio Projects\shoppingCart\shoppingCart\obj\Debug\shoppingCart.pdb
+E:\Drive\Projects\Visual Studio Projects\shoppingCart\shoppingCart\bin\Debug\catalog.txt
