@@ -5,3 +5,6 @@ E:\Drive\Projects\Visual Studio Projects\shoppingCart\shoppingCart\obj\Debug\sho
 E:\Drive\Projects\Visual Studio Projects\shoppingCart\shoppingCart\obj\Debug\shoppingCart.exe
 E:\Drive\Projects\Visual Studio Projects\shoppingCart\shoppingCart\obj\Debug\shoppingCart.pdb
 E:\Drive\Projects\Visual Studio Projects\shoppingCart\shoppingCart\bin\Debug\catalog.txt
+C:\Projects\junk\junk2\ShoppingCart\bin\Debug\shoppingCart.exe.config
+C:\Projects\junk\junk2\ShoppingCart\obj\Debug\shoppingCart.exe
+C:\Projects\junk\junk2\ShoppingCart\obj\Debug\shoppingCart.pdb

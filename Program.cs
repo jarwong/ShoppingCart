@@ -1,86 +1,72 @@
 ﻿using System;
-using System.IO;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ShoppingCart
 {
-    class Program
+    public class Program
     {
-        private static string[] ReadCatalogFromFile()
+        private static List<string> ReadCatalogFromFile()
         {
-            StreamReader myReader = new StreamReader("catalog.txt");
-            string line = "";
-            String[] Result = new String[1100];
+            var reader = new StreamReader("catalog.txt");
+            var line = "";
+            var result = new List<string>();
 
-            int counter = 0;
-
-            while (line != null)
+            while ((line = reader.ReadLine()) != null)
             {
-                line = myReader.ReadLine();
-                if (line != null)
-                {
-                    Result[counter] = line;
-                    counter++;
-                }
+                result.Add(line);
             }
 
-            myReader.Close();
-            return Result;
+            reader.Close();
+            return result;
         }
 
-        static bool IsProductInCatalog(string product, string[] catalog)
+        private static bool IsProductInCatalog(string product, List<string> catalog)
         {
-            for (int i = 0; i < catalog.Length; i++)
-            {
-                if (product == catalog[i])
-                    return true;
-            }
-            return false;
+            return catalog.Any(t => product == t);
         }
 
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
-            String[] catalog = ReadCatalogFromFile();
-            String[] cart = new String[5];
+            var catalog = ReadCatalogFromFile();
+            var cart = new List<string>();
 
             Console.WriteLine("Please create a cart of 5 items you'd like");
-            int temp = 0;
 
-            while (temp < 5)
+            while (cart.Count < 5)
             {
-                Console.WriteLine("What is item " + (temp + 1) + " you'd like to add to your shopping cart?");
-                String PotentialItem = Console.ReadLine();
+                Console.WriteLine("What is item " + (cart.Count + 1) + " you'd like to add to your shopping cart?");
+                var potentialItem = Console.ReadLine();
 
-                if (PotentialItem == "quit")
+                if (potentialItem == "quit")
                 {
                     Console.WriteLine("Not filling up your cart? Okay.");
                     break;
                 }
-                if (IsProductInCatalog(PotentialItem, catalog))
+                if (IsProductInCatalog(potentialItem, catalog))
                 {
-                    Console.WriteLine(PotentialItem + " is available");
-                    Console.WriteLine("");
-                    cart[temp] = PotentialItem;
-                    temp++;
-                    if (temp == 5)
+                    Console.WriteLine(potentialItem + " is available\n");
+
+                    cart.Add(potentialItem);
+
+                    if (cart.Count == 5)
+                    {
                         Console.WriteLine("Your shopping cart is full!");
+                    }
                     continue;
                 }
 
-                Console.WriteLine(PotentialItem + " is not available in our catalog.");
+                Console.WriteLine(potentialItem + " is not available in our catalog.");
             }
+           
+            Console.WriteLine("\n\nHere's what you bought:");
 
-            Console.WriteLine("");
-            Console.WriteLine("");
-            Console.WriteLine("Here's what you bought:");
-
-            foreach (string item in cart)
+            foreach (var item in cart)
             {
                 Console.WriteLine(item);
             }
+
             Console.ReadLine();
 
         }
